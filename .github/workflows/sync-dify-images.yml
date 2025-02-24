@@ -94,3 +94,15 @@ jobs:
 
       - name: Push nginx image to Aliyun Registry
         run: docker push ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_NAMESPACE }}/nginx:latest
+        
+
+      - name: Pull dify-plugin-daemon image from Docker Hub
+        run: docker pull langgenius/dify-plugin-daemon:lastest
+
+      - name: Tag dify-plugin-daemon image for ACR
+        run: docker tag langgenius/dify-plugin-daemon:latest ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_NAMESPACE }}/dify-plugin-daemon:lastest
+
+      - name: Push dify-plugin-daemon image to Aliyun Registry
+        run: docker push ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_NAMESPACE }}/lastest
+        
+
