@@ -25,13 +25,13 @@ jobs:
 
 
       - name: Pull dify-plugin-daemon image from Docker Hub
-        run: docker pull langgenius/dify-plugin-daemon:0.0.2-local
+        run: docker pull langgenius/dify-plugin-daemon:0.0.3-local
 
       - name: Tag dify-plugin-daemon image for ACR
-        run: docker tag langgenius/dify-plugin-daemon:0.0.2-local ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_NAMESPACE }}/dify-plugin-daemon:0.0.2-local
+        run: docker tag langgenius/dify-plugin-daemon:0.0.3-local ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_NAMESPACE }}/dify-plugin-daemon:0.0.3-local
 
       - name: Push dify-plugin-daemon image to Aliyun Registry
-        run: docker push ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_NAMESPACE }}/dify-plugin-daemon:0.0.2-local
+        run: docker push ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_NAMESPACE }}/dify-plugin-daemon:0.0.3-local
 
         
 
